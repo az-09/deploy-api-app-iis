@@ -5,6 +5,9 @@
 
 2. Deploy Django API to IIS
     - pip install wfastcgi on virtual enviroment
+    - add STATIC_ROOT =  BASE_DIR / 'static' in settings.py
+    - python manage.py collectstatic
+
     
     - Right click on "Sites" >> Add Website
     - Enter "Site name", "Physical path", "IP Address", "Port"
