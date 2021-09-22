@@ -10,7 +10,6 @@ ___Deploy Django API to IIS___
 - Right click on "Sites" >> Add Website
 - Enter "Site name", "Physical path", "IP Address", "Port"
         
-        eg) 
         Site: LottoComboAPI, 
         Physical path: C:\Developments\python-lotto-combo-api\lottocomboapi
         IP Address: 192.168.1.100
@@ -19,7 +18,6 @@ ___Deploy Django API to IIS___
 - Click "Add Module Mapping"
 - Enter "Request path", "Module", "Executable", "Name"
         
-        eg) 
         Request path: *
         Module: FastCgiModule
         Executable: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe|C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Lib\site-packages\wfastcgi.py
@@ -31,7 +29,6 @@ ___Deploy Django API to IIS___
 - Enviorment Variables >> Click "Collection"
 - Enter "PYTHONPATH", "WSGI_HANDLER", "DJANGO_SETTINGS_MODULE"
         
-        eg)
         PYTHONPATH: C:\Developments\python-lotto-combo-api\lottocomboapi
         WSGI_HANDLER: django.core.wsgi.get_wsgi_application()
         DJANGO_SETTINGS_MODULE: lottocomboapi.settings
@@ -50,28 +47,27 @@ ___Deploy Django API to IIS___
 
 ___Troubleshooting___
 - DisallowedHost at /
-    - Add a new host to ALLOWED_HOSTS in settings.py
+> Add a new host to ALLOWED_HOSTS in settings.py
         
-        eg) ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
+        ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
 
 - Layout broken
-    - Add new Handler Mappings
+> Add new Handler Mappings
         
-        eg) 
             Request path: *
             Module: StaticFileModule,DefaultDocumentModule,DirectoryListingModule
             Executable: 
             Name: StaticFile
 - The Web server is configured to not list the contents of this directory.
-    - Recreate a Handler Mappings
+> Recreate a Handler Mappings
         
-        eg) 
             Request path: *
             Module: FastCgiModule
             Executable: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe|C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Lib\site-packages\wfastcgi.py
             Name: Django Handler
-    - Click No if one already exists in "FastCGI Settings" in Computer/Username
-    - Click Yes if need to create a new one then enter Enviroment Variables
+    
+            Click No if one already exists in "FastCGI Settings" in Computer/Username
+            Click Yes if need to create a new one then enter Enviroment Variables
 
 ___Firewall rule: Port has to be open in order to call API from other computers___
 - Open Windows Defender Firewall with Advanced Security 
@@ -79,21 +75,19 @@ ___Firewall rule: Port has to be open in order to call API from other computers_
 - Select "Port" >> "Specific local ports" eg) 8200
 - Select "Allow the connection"       
 - Select Domain, Private, Public 
-- Enter Name eg) LottoCombo API Port rule
+- Enter Name "LottoCombo API Port rule"
 
 ___Deploy React App to IIS___
 - npm run build
 - Right click on "Sites" >> Add Website
 - Enter "Site name", "Physical path", "IP Address", "Port"
-        
-        eg) 
+         
         Site: LottoComboAPP, 
         Physical path: C:\Developments\react-lottocombo-app\build
-        IP Address: Real IP Address
+        IP Address: 192.168.1.100
         Port: 8280
-- Open Browse Website: 
         
-        eg) Real IP Address:8280
+- Open Browse Website @ 192.168.1.100:8280
 
 ___Firewall rule: Port has to be open for public access___
 - Open Windows Defender Firewall with Advanced Security
@@ -101,6 +95,4 @@ ___Firewall rule: Port has to be open for public access___
 - Select "Port" >> "Specific local ports" eg) 8280
 - Select "Allow the connection"       
 - Select Domain, Private, Public
-- Enter Name 
-        
-        eg) LottoCombo App Port rule
+- Enter Name "LottoCombo App Port rule"
