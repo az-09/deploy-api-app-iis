@@ -33,7 +33,7 @@ ___Deploy Django API to IIS___
         WSGI_HANDLER: django.core.wsgi.get_wsgi_application()
         DJANGO_SETTINGS_MODULE: lottocomboapi.settings
 - Check if web.config is created on root folder of api, where manage.py exists
-        ```
+ 
         <?xml version="1.0" encoding="UTF-8"?>
         <configuration>
             <system.webServer>
@@ -42,7 +42,7 @@ ___Deploy Django API to IIS___
                 </handlers>
             </system.webServer>
         </configuration>
-    ```
+ 
 - Click Restart then Click Browse Website eg) Browse 192.168.1.100:8200(http)
 
 ___Troubleshooting___
@@ -65,7 +65,6 @@ ___Troubleshooting___
             Executable: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe|C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Lib\site-packages\wfastcgi.py
             Name: Django Handler
     - Click No if one already exists in "FastCGI Settings" in Computer/Username
-
     - Click Yes if need to create a new one then enter Enviroment Variables
 
 ___Firewall rule: Port has to be open in order to call API from other computers___
