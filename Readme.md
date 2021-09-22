@@ -45,7 +45,7 @@
             </system.webServer>
         </configuration>
  
-- Click Restart then Click Browse Website eg) Browse 192.168.1.100:8200(http)
+- Click Restart then Click Browse Website @ 192.168.1.100:8200 (http)
 
 ### Troubleshooting
 - DisallowedHost at /
