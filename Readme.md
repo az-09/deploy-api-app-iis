@@ -1,9 +1,11 @@
-___Install IIS___
+# Setup Django API and React App
+
+### Install IIS
 - Turn Windows features on or off
 - Check "Internet Information Services"
 - Internet Information Services >> World Wide Web Services >> Application Deployment Features >> Check "CGI"
 
-___Deploy Django API to IIS___
+### Deploy Django API to IIS
 - pip install wfastcgi on virtual enviroment
 - add STATIC_ROOT =  BASE_DIR / 'static' in settings.py
 - python manage.py collectstatic
@@ -45,7 +47,7 @@ ___Deploy Django API to IIS___
  
 - Click Restart then Click Browse Website eg) Browse 192.168.1.100:8200(http)
 
-___Troubleshooting___
+### Troubleshooting
 - DisallowedHost at /
 > Add a new host to ALLOWED_HOSTS in settings.py
         
@@ -69,7 +71,7 @@ ___Troubleshooting___
             Click No if one already exists in "FastCGI Settings" in Computer/Username
             Click Yes if need to create a new one then enter Enviroment Variables
 
-___Firewall rule: Port has to be open in order to call API from other computers___
+### Firewall rule: Port has to be open in order to call API from other computers
 - Open Windows Defender Firewall with Advanced Security 
 - Right click on "Inbound Rules" >> New Rules    
 - Select "Port" >> "Specific local ports" eg) 8200
@@ -77,19 +79,19 @@ ___Firewall rule: Port has to be open in order to call API from other computers_
 - Select Domain, Private, Public 
 - Enter Name "LottoCombo API Port rule"
 
-___Deploy React App to IIS___
+### Deploy React App to IIS
 - npm run build
 - Right click on "Sites" >> Add Website
 - Enter "Site name", "Physical path", "IP Address", "Port"
          
         Site: LottoComboAPP, 
         Physical path: C:\Developments\react-lottocombo-app\build
-        IP Address: 192.168.1.100
-        Port: 8280
+        IP Address: your ip adress
+        Port: 80
         
-- Open Browse Website @ 192.168.1.100:8280
+- Open Browse Website @ your ip address
 
-___Firewall rule: Port has to be open for public access___
+### Firewall rule: Port has to be open for public access
 - Open Windows Defender Firewall with Advanced Security
 - Right click on "Inbound Rules" >> New Rules 
 - Select "Port" >> "Specific local ports" eg) 8280
