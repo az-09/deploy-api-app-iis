@@ -44,20 +44,20 @@ ___Deploy Django API to IIS___
         </configuration>
     ```
 - Click Restart then Click Browse Website eg) Browse 192.168.1.100:8200(http)
-- Troubleshooting
-A. DisallowedHost at /
+
+___Troubleshooting___
+- DisallowedHost at /
     - Add a new host to ALLOWED_HOSTS in settings.py
         eg) ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
 
-B. Layout broken
+- Layout broken
     - Add new Handler Mappings
         eg) 
             Request path: *
             Module: StaticFileModule,DefaultDocumentModule,DirectoryListingModule
             Executable: 
             Name: StaticFile
-
-C. The Web server is configured to not list the contents of this directory.
+- The Web server is configured to not list the contents of this directory.
     - Recreate a Handler Mappings
         eg) 
             Request path: *
