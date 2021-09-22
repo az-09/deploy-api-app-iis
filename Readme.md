@@ -91,7 +91,7 @@
         
 - Open Browse Website @ your ip address
 
-### Firewall rule: Port has to be open for public access if 
+### Firewall rule: Port (other than 80) has to be open for public access 
 - Open Windows Defender Firewall with Advanced Security
 - Right click on "Inbound Rules" >> New Rules 
 - Select "Port" >> "Specific local ports" eg) 8280
