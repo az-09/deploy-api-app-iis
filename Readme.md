@@ -87,11 +87,11 @@
         Site: LottoComboAPP, 
         Physical path: C:\Developments\react-lottocombo-app\build
         IP Address: your ip adress
-        Port: 80
+        Port: 8280 (80 can be used - no firewall rule is needed)
         
 - Open Browse Website @ your ip address
 
-### Firewall rule: Port has to be open for public access
+### Firewall rule: Port has to be open for public access if 
 - Open Windows Defender Firewall with Advanced Security
 - Right click on "Inbound Rules" >> New Rules 
 - Select "Port" >> "Specific local ports" eg) 8280
