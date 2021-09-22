@@ -1,11 +1,11 @@
-1. Install IIS
+___Install IIS___
     - Turn Windows features on or off
     
     - Check "Internet Information Services"
     
     - Internet Information Services >> World Wide Web Services >> Application Deployment Features >> Check "CGI"
 
-2. Deploy Django API to IIS
+___Deploy Django API to IIS___
     - pip install wfastcgi on virtual enviroment
     
     - add STATIC_ROOT =  BASE_DIR / 'static' in settings.py
@@ -85,7 +85,7 @@
             
             -> Click Yes if need to create a new one then enter Enviroment Variables
 
-3. Firewall rule: Port has to be open in order to call API from other computers
+___Firewall rule: Port has to be open in order to call API from other computers___
     - Open Windows Defender Firewall with Advanced Security
     
     - Right click on "Inbound Rules" >> New Rules 
@@ -98,7 +98,7 @@
     
     - Enter Name eg) LottoCombo API Port rule
 
-4. Deploy React App to IIS
+___Deploy React App to IIS___
     - npm run build
 
     - Right click on "Sites" >> Add Website
@@ -112,7 +112,7 @@
     
     - Open Browse Website: eg) Real IP Address:8280
 
-5. Firewall rule: Port has to be open for public access
+___Firewall rule: Port has to be open for public access___
     - Open Windows Defender Firewall with Advanced Security
     
     - Right click on "Inbound Rules" >> New Rules 
