@@ -45,28 +45,28 @@ ___Deploy Django API to IIS___
     ```
 - Click Restart then Click Browse Website eg) Browse 192.168.1.100:8200(http)
 - Troubleshooting
-        A. DisallowedHost at /
-            -> Add a new host to ALLOWED_HOSTS in settings.py
-                eg) ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
+A. DisallowedHost at /
+    - Add a new host to ALLOWED_HOSTS in settings.py
+        eg) ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
 
-        B. Layout broken
-            -> Add new Handler Mappings
-                eg) 
-                    Request path: *
-                    Module: StaticFileModule,DefaultDocumentModule,DirectoryListingModule
-                    Executable: 
-                    Name: StaticFile
+B. Layout broken
+    - Add new Handler Mappings
+        eg) 
+            Request path: *
+            Module: StaticFileModule,DefaultDocumentModule,DirectoryListingModule
+            Executable: 
+            Name: StaticFile
 
-        C. The Web server is configured to not list the contents of this directory.
-            -> Recreate a Handler Mappings
-                eg) 
-                    Request path: *
-                    Module: FastCgiModule
-                    Executable: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe|C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Lib\site-packages\wfastcgi.py
-                    Name: Django Handler
-            -> Click No if one already exists in "FastCGI Settings" in Computer/Username
-            
-            -> Click Yes if need to create a new one then enter Enviroment Variables
+C. The Web server is configured to not list the contents of this directory.
+    - Recreate a Handler Mappings
+        eg) 
+            Request path: *
+            Module: FastCgiModule
+            Executable: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe|C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Lib\site-packages\wfastcgi.py
+            Name: Django Handler
+    - Click No if one already exists in "FastCGI Settings" in Computer/Username
+
+    - Click Yes if need to create a new one then enter Enviroment Variables
 
 ___Firewall rule: Port has to be open in order to call API from other computers___
 - Open Windows Defender Firewall with Advanced Security 
