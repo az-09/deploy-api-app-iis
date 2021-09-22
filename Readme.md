@@ -51,6 +51,7 @@ ___Deploy Django API to IIS___
 ___Troubleshooting___
 - DisallowedHost at /
     - Add a new host to ALLOWED_HOSTS in settings.py
+        
         eg) ALLOWED_HOSTS = ['192.168.1.100', 'localhost']
 
 - Layout broken
@@ -90,7 +91,9 @@ ___Deploy React App to IIS___
         Physical path: C:\Developments\react-lottocombo-app\build
         IP Address: Real IP Address
         Port: 8280
-- Open Browse Website: eg) Real IP Address:8280
+- Open Browse Website: 
+        
+        eg) Real IP Address:8280
 
 ___Firewall rule: Port has to be open for public access___
 - Open Windows Defender Firewall with Advanced Security
@@ -98,4 +101,6 @@ ___Firewall rule: Port has to be open for public access___
 - Select "Port" >> "Specific local ports" eg) 8280
 - Select "Allow the connection"       
 - Select Domain, Private, Public
-- Enter Name eg) LottoCombo App Port rule
+- Enter Name 
+        
+        eg) LottoCombo App Port rule
