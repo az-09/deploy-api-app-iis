@@ -9,6 +9,7 @@ ___Deploy Django API to IIS___
 - python manage.py collectstatic
 - Right click on "Sites" >> Add Website
 - Enter "Site name", "Physical path", "IP Address", "Port"
+        
         eg) 
         Site: LottoComboAPI, 
         Physical path: C:\Developments\python-lotto-combo-api\lottocomboapi
@@ -17,6 +18,7 @@ ___Deploy Django API to IIS___
 - Open Handler Mappings inside of website (eg. LottoComboAPI)
 - Click "Add Module Mapping"
 - Enter "Request path", "Module", "Executable", "Name"
+        
         eg) 
         Request path: *
         Module: FastCgiModule
@@ -28,6 +30,7 @@ ___Deploy Django API to IIS___
 - Double click one created from above step eg) full path: C:\Developments\python-lotto-combo-api\lottocomboapi\venv\Scripts\python.exe
 - Enviorment Variables >> Click "Collection"
 - Enter "PYTHONPATH", "WSGI_HANDLER", "DJANGO_SETTINGS_MODULE"
+        
         eg)
         PYTHONPATH: C:\Developments\python-lotto-combo-api\lottocomboapi
         WSGI_HANDLER: django.core.wsgi.get_wsgi_application()
@@ -52,6 +55,7 @@ ___Troubleshooting___
 
 - Layout broken
     - Add new Handler Mappings
+        
         eg) 
             Request path: *
             Module: StaticFileModule,DefaultDocumentModule,DirectoryListingModule
@@ -59,6 +63,7 @@ ___Troubleshooting___
             Name: StaticFile
 - The Web server is configured to not list the contents of this directory.
     - Recreate a Handler Mappings
+        
         eg) 
             Request path: *
             Module: FastCgiModule
@@ -79,6 +84,7 @@ ___Deploy React App to IIS___
 - npm run build
 - Right click on "Sites" >> Add Website
 - Enter "Site name", "Physical path", "IP Address", "Port"
+        
         eg) 
         Site: LottoComboAPP, 
         Physical path: C:\Developments\react-lottocombo-app\build
