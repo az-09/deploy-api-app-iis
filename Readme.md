@@ -100,5 +100,5 @@
 - Enter Name "LottoCombo App Port rule"
 
 
-### Reference
+### References
 - https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/
