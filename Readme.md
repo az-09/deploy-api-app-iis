@@ -98,3 +98,7 @@
 - Select "Allow the connection"       
 - Select Domain, Private, Public
 - Enter Name "LottoCombo App Port rule"
+
+
+### Reference
+- https://nitinnain.com/setting-up-and-running-django-on-windows-iis-server/
